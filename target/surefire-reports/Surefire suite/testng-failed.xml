@@ -5,11 +5,9 @@
     <classes>
       <class name="Tests">
         <methods>
-          <include name="teardown"/>
           <include name="test002_fillExpertsApplication"/>
           <include name="beforeTest"/>
           <include name="setUp"/>
-          <include name="screenShotIfFail"/>
         </methods>
       </class> <!-- Tests -->
     </classes>

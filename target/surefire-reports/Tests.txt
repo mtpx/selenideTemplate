@@ -1,29 +1,23 @@
 -------------------------------------------------------------------------------
 Test set: Tests
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 0, Skipped: 1, Time elapsed: 41.42 s <<< FAILURE! - in Tests
-test002_fillExpertsApplication(Tests)  Time elapsed: 11.788 s  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 47.48 s <<< FAILURE! - in Tests
+test002_fillExpertsApplication(Tests)  Time elapsed: 19.747 s  <<< FAILURE!
 com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {By.xpath: //button[@id='j_idt123:j_idt128:0:j_idt139']}
+Element not found {#o0o0section-1-control?grid-2-grid?options-control??e0 + span}
 Expected: visible or transparent
-	at Tests.test002_fillExpertsApplication(Tests.java:82)
-Caused by: org.openqa.selenium.NoSuchWindowException: 
-no such window: target window already closed
-from unknown error: web view not found
+	at Tests.test002_fillExpertsApplication(Tests.java:95)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#o0o0section-1-control?grid-2-grid?options-control??e0 + span"}
   (Session info: chrome=74.0.3729.169)
   (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: '3E-WA-0105', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: C:\Users\mkrasny\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51943}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
-Session ID: dc485b152a9c1a9ef9a1ae26966df2b0
-*** Element info: {Using=xpath, value=//button[@id='j_idt123:j_idt128:0:j_idt139']}
-	at Tests.test002_fillExpertsApplication(Tests.java:82)
-
-screenShotIfFail(Tests)  Time elapsed: 11.788 s  <<< FAILURE!
-java.lang.NullPointerException
-	at Tests.takeScreenShot(Tests.java:180)
-	at Tests.takeScreenShot(Tests.java:191)
-	at Tests.screenShotIfFail(Tests.java:173)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: C:\Users\mkrasny\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54348}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
+Session ID: fc39f660c4659a51fd55d7afa3b8a937
+*** Element info: {Using=css selector, value=#o0o0section-1-control?grid-2-grid?options-control??e0 + span}
+	at Tests.test002_fillExpertsApplication(Tests.java:95)
 

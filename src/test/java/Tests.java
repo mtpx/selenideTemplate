@@ -1,9 +1,11 @@
 import com.codeborne.selenide.*;
 //import com.codeborne.selenide.logevents.SelenideLogger;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
 //import io.qameta.allure.selenide.AllureSelenide;
 import com.google.common.io.Files;
 import io.qameta.allure.*;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -32,7 +34,7 @@ public class Tests {
     public void setUp() throws Exception {
         Configuration.browser="chrome";
         Configuration.timeout = 10000;
-     //   SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     }
     @BeforeMethod
     public void beforeTest() {
@@ -167,61 +169,6 @@ public class Tests {
     }
 
 */
-@AfterMethod
-protected void screenShotIfFail(ITestResult result) throws IOException {
-    if (!result.isSuccess()) {
-        takeScreenShot(result.getMethod());
-    }
-}
 
-    private void takeScreenShot(String name) throws IOException {
-        String path = getRelativePath(name);
-        File screenShot = ((TakesScreenshot) driver)
-                .getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(screenShot, new File(path));
-        String filename = makeScreenShotFileName(name);
-        System.out.println("Taking Screenshot! " + filename);
-        Reporter.log("<a href=" + path + " target='_blank' >" + filename
-                + "</a>");
-    }
-    private void takeScreenShot(ITestNGMethod testMethod) throws IOException {
-        String nameScreenShot = testMethod.getTestClass().getRealClass()
-                .getSimpleName()
-                + "_" + testMethod.getMethodName();
-        takeScreenShot(nameScreenShot);
-    }
-    private String makeScreenShotFileName(String name) {
-        DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy_hh.mm.ss");
-        Date date = new Date();
-        return dateFormat.format(date) + "_" + name + ".png";
-    }
-    private String getRelativePath(String name) throws IOException {
-        Path path = Paths.get(".", "target", "surefire-reports", "screenShots",
-                makeScreenShotFileName(name));
-        File directory = new File(path.toString());
-        return directory.getCanonicalPath();
-    }
 
-    @AfterClass
-    public void teardown() {
-    //    SelenideLogger.removeListener("allureSelenide");
-        if (driver != null) {
-            driver.quit();
-        }
-    }
-  /*  @Override
-    public void onTestFailure  (ITestResult iTestResult) {
-        try {
-            screenshot();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }*/
-    @Attachment(value = "{0}", type = "image/png")
-    public byte[] screenshot() throws IOException {
-        File screenshot = Screenshots.takeScreenShotAsFile();
-        FileUtils.copyFile(screenshot, new File("target\\allure-results\\screenshots\\" + screenshot.getName()));
-        return Files.toByteArray(screenshot);
-    }
 }
