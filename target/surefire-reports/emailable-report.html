@@ -8,14 +8,19 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Tests</th></tr>
-<tr><td><a href="#t0">Command line test</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">36 205</td><td></td><td></td></tr>
+<tr><th colspan="7">Surefire suite</th></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">33 531</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Tests</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Tests</td><td><a href="#m0">test002_fillExpertsApplication</a></td><td rowspan="1">1560150708781</td><td rowspan="1">17513</td></tr><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Tests</td><td><a href="#m1">test001_logowanie</a></td><td rowspan="1">1560150690440</td><td rowspan="1">18268</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">Tests</td><td><a href="#m0">screenShotIfFail</a></td><td rowspan="1">1560168419745</td><td rowspan="1">7</td></tr><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Tests</td><td><a href="#m1">test002_fillExpertsApplication</a></td><td rowspan="1">1560168409338</td><td rowspan="1">10304</td></tr><tr><th colspan="4">Surefire test &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">Tests</td><td><a href="#m2">teardown</a></td><td rowspan="1">1560168419839</td><td rowspan="1">0</td></tr><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Tests</td><td><a href="#m3">test001_logowanie</a></td><td rowspan="1">1560168386783</td><td rowspan="1">22458</td></tr></tbody>
 </table>
-<h2>Command line test</h2><h3 id="m0">Tests#test002_fillExpertsApplication</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Element not found {#o0o0section-1-control≡grid-2-grid≡options-control≡≡e0 + span}
+<h2>Surefire test</h2><h3 id="m0">Tests#screenShotIfFail</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=test002_fillExpertsApplication status=FAILURE method=Tests.test002_fillExpertsApplication()[pri:1, instance:Tests@989da1] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at Tests.takeScreenShot(Tests.java:180)
+	at Tests.takeScreenShot(Tests.java:191)
+	at Tests.screenShotIfFail(Tests.java:173)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Tests#test002_fillExpertsApplication</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Element not found {By.xpath: //button[@id=&apos;j_idt123:j_idt128:0:j_idt139&apos;]}
 Expected: visible or transparent
-Page source: file:/C:/Users/mkrasny/IdeaProjects/nawa/build/reports/tests/1560150726155.0.html
+Page source: file:/C:/Users/mkrasny/IdeaProjects/nawa/build/reports/tests/1560168419581.0.html
 Timeout: 10 s.
 Caused by: NoSuchWindowException: no such window: target window already closed
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:37)
@@ -27,9 +32,9 @@ Caused by: NoSuchWindowException: no such window: target window already closed
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:99)
 	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
-	at com.sun.proxy.$Proxy17.click(Unknown Source)
-	at pages.ExpertsApplication.clickInterestedInNawaCheckbox(ExpertsApplication.java:72)
-	at Tests.test002_fillExpertsApplication(Tests.java:83)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at pages.HomePage.clickFillExpertsApplication(HomePage.java:15)
+	at Tests.test002_fillExpertsApplication(Tests.java:82)
 Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
 from unknown error: web view not found
   (Session info: chrome=74.0.3729.169)
@@ -38,9 +43,9 @@ Command duration or timeout: 0 milliseconds
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;3E-WA-0105&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;10.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: C:\Users\mkrasny\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62157}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
-Session ID: bc612e35b9d9626a32957d0c36a41cf5
-*** Element info: {Using=css selector, value=#o0o0section-1-control≡grid-2-grid≡options-control≡≡e0 + span}
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: C:\Users\mkrasny\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51943}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
+Session ID: dc485b152a9c1a9ef9a1ae26966df2b0
+*** Element info: {Using=xpath, value=//button[@id=&apos;j_idt123:j_idt128:0:j_idt139&apos;]}
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
 	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
@@ -50,14 +55,15 @@ Session ID: bc612e35b9d9626a32957d0c36a41cf5
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:28)
 	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:74)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:50)
-	... 43 more
-... Removed 38 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">Tests#test001_logowanie</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	... 38 more
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Tests#teardown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">Tests#test001_logowanie</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
