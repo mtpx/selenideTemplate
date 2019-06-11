@@ -1,28 +1,13 @@
 import com.codeborne.selenide.*;
-//import com.codeborne.selenide.logevents.SelenideLogger;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
-//import io.qameta.allure.selenide.AllureSelenide;
-import com.google.common.io.Files;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.*;
 import org.testng.annotations.*;
 import pages.*;
 import utils.Constants;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import static com.codeborne.selenide.Selenide.open;
 
 public class Tests {

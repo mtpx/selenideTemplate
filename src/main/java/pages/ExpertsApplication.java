@@ -1,11 +1,12 @@
 
 package pages;
+import static com.codeborne.selenide.Selenide.*;
+
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import java.util.List;
-import static com.codeborne.selenide.Selenide.*;
 import static utils.Utils.*;
 
 
@@ -95,9 +96,10 @@ public class ExpertsApplication extends _TestBase {
     }
 
     @Step("Czekanie na znikniecie komunikatu")
-    public void waitForDraftSavedTitleToDisappear(){
-        savingDraftTitle.waitUntil(Condition.appear,6);
-        savingDraftTitle.waitUntil(Condition.disappear,6000);
+    public void waitForDraftSavedTitleToDisappear() throws InterruptedException {
+    //    Thread.sleep(500);
+        savingDraftTitle.shouldBe(Condition.visible);
+        savingDraftTitle.should(Condition.disappear);
     }
 
     @Step("Ustawienie tytulu akademickiego {1}")
@@ -107,17 +109,17 @@ public class ExpertsApplication extends _TestBase {
     }
 
 
-    // @Step("Wybor losowego zakresu tematycznego")
+    @Step("Wybor losowego zakresu tematycznego")
     public void selectRandomThematicScopeProgram(){
         selectRandomValueFromDropdown(thematicScopeSelect);
     }
 
-    //  @Step("Wybor losowego poziomu jezyka")
+    @Step("Wybor losowego poziomu jezyka")
     public void selectRandomEnglishLevel(){
         selectRandomValueFromDropdown(englishLevelSelect);
     }
 
-    //  @Step("Zaznaczenie wymaganych checkboxow")
+    @Step("Zaznaczenie wymaganych checkboxow")
     public void clickRequiredCheckboxes() throws InterruptedException {
         dataProcessingCheckbox.click();
         trueInformationCheckbox.click();
@@ -127,42 +129,37 @@ public class ExpertsApplication extends _TestBase {
 
     //main form buttons functions
 
-    // @Step("Wyslij aplikacje")
+    @Step("Wyslij aplikacje")
     public void clickSubmitApplicationButton() {
         submitApplicationButton.click();
     }
 
-    //  @Step("Zapisz kopie robocza")
+    @Step("Zapisz kopie robocza")
     public void clickSaveAsCopyButton() {
         saveAsCopyButton.click();
     }
 
-    //  @Step("Szkic zostal zapisany - zamkniecie boxa")
+    @Step("Szkic zostal zapisany - zamkniecie boxa")
     public void clickSavingDraftTitleCloseButton() {
         savingDraftTitleCloseButton.click();
     }
 
     //validation functions
 
-    // @Step("Pobieranie tresci bledow")
+    @Step("Pobieranie tresci bledow")
     public String getValidationErrorDialogBoxLabelText() {
         validationErrorDialogBox.shouldBe(Condition.visible);
         return validationErrorDialogBoxLabel.getText();
     }
 
-    //  @Step("Klikniecie OK na dialog boxie z bledami")
+    @Step("Klikniecie OK na dialog boxie z bledami")
     public void clickOkOnValidationErrorDialogBox() {
         okOnValidationErrorDialogBox.click();
     }
 
-    //   @Step("Pobranie listy bledów")
+    @Step("Pobranie listy bledów")
     public String getBottomErrorHeaderText() {
         return bottomErrorHeaderText.getText();
     }
-
-
-
-
-
 
 }
