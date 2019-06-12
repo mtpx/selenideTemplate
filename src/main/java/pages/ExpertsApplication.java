@@ -31,16 +31,21 @@ public class ExpertsApplication extends _TestBase {
     private SelenideElement academicTitleInput = $("#o0section-5-control≡grid-5-grid≡academic_title-control≡xforms-input-1");
 
     //2. Okreslenie specjalizacji, zakresu tematycznego
-    private SelenideElement thematicScopeSelect = $("#o0section-5-control≡grid-156-grid≡thematic_scope1-control≡select1≡≡c⊙1");
-
+    private SelenideElement thematicScopeSelect_acfg = $("#o0section-5-control≡grid-156-grid≡thematic_scope1-control≡select1≡≡c⊙1");
+    private SelenideElement thematicScopeSelect_bd = $("#o0section-5-control≡grid-158-grid≡oecd_lvl_i-control≡select1≡≡c⊙1");
+    private SelenideElement thematicScopeSelect_bd_2 = $("#o0section-5-control≡grid-158-grid≡oecd_lvl_ii-control≡select1≡≡c⊙1");
     //8. Znajomosc jezykow obcych
     private SelenideElement englishLevelSelect = $("#o0section-5-control≡grid-65-grid≡foreign_language_level-control≡select1≡≡c⊙1");
 
     //8. Oswiadczenia
+  //  private SelenideElement dataProcessingCheckbox = $("#o0o0section-13-control≡grid-18-grid≡statement1-control≡≡e0");
+   // private SelenideElement trueInformationCheckbox = $("#o0o0section-79-control≡grid-19-grid≡statement2-control≡≡e0");
+  //  private SelenideElement dataConfidentialityCheckbox = $("#o0o0section-79-control≡grid-19-grid≡statement3-control≡≡e0");
+
     private SelenideElement dataProcessingCheckbox = $("#o0section-13-control≡grid-18-grid≡statement1-control .xforms-deselected .checkbox");
     private SelenideElement trueInformationCheckbox = $("#o0section-79-control≡grid-19-grid≡statement2-control .xforms-deselected .checkbox");
     private SelenideElement dataConfidentialityCheckbox = $("#o0section-79-control≡grid-19-grid≡statement3-control .xforms-deselected .checkbox");
-    private SelenideElement deselect = $(By.xpath("//span[@class='xforms-deselected']"));
+    //private SelenideElement deselect = $(By.xpath("//span[@class='xforms-deselected']"));
 
 
     //main form buttons elements
@@ -111,7 +116,19 @@ public class ExpertsApplication extends _TestBase {
 
     @Step("Wybor losowego zakresu tematycznego")
     public void selectRandomThematicScopeProgram(){
-        selectRandomValueFromDropdown(thematicScopeSelect);
+        System.out.println("selected prog: "+nawaProgramsSelect.getSelectedOption());
+        System.out.println("selected prog: "+nawaProgramsSelect.getAttribute("value"));
+        System.out.println("1: "+nawaProgramsSelect.getAttribute("value") == "1");
+        System.out.println("2: "+nawaProgramsSelect.getAttribute("value") == "2");
+        System.out.println("3: "+nawaProgramsSelect.getAttribute("value") == "3");
+        System.out.println("4: "+nawaProgramsSelect.getAttribute("value") == "4");
+        System.out.println("5: "+nawaProgramsSelect.getAttribute("value") == "5");
+        System.out.println("6: "+nawaProgramsSelect.getAttribute("value") == "6");
+        if(nawaProgramsSelect.getSelectedOption().getValue() == "2" || nawaProgramsSelect.getSelectedOption().getValue() == "4" ) {
+            selectRandomValueFromDropdown(thematicScopeSelect_bd);
+            selectRandomValueFromDropdown(thematicScopeSelect_bd_2);
+        }else
+            selectRandomValueFromDropdown(thematicScopeSelect_acfg);
     }
 
     @Step("Wybor losowego poziomu jezyka")
@@ -121,6 +138,10 @@ public class ExpertsApplication extends _TestBase {
 
     @Step("Zaznaczenie wymaganych checkboxow")
     public void clickRequiredCheckboxes() throws InterruptedException {
+     //   dataProcessingCheckbox.setSelected(true);
+     //   trueInformationCheckbox.setSelected(true);
+      //  dataConfidentialityCheckbox.setSelected(true);
+
         dataProcessingCheckbox.click();
         trueInformationCheckbox.click();
         dataConfidentialityCheckbox.click();

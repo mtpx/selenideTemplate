@@ -11,12 +11,12 @@ import java.util.List;
 
 public class Login extends _TestBase {
 
-    private SelenideElement email = $("#email");
-    private SelenideElement password = $("#password");
-    private SelenideElement loginButton = $("#loginButton");
-    private SelenideElement registerButton = $("##j_idt60");
-    private SelenideElement rememberMeCheckbox = $("#remember-me");
-    private List<SelenideElement> errorMessages = $$(By.xpath("//div[@id='messages_container']//span[@class='ui-growl-title']"));
+    private static SelenideElement email = $("#email"),
+            password = $("#password"),
+            loginButton = $("#loginButton"),
+            registerButton = $("##j_idt60"),
+            rememberMeCheckbox = $("#remember-me");
+    private static List<SelenideElement> errorMessages = $$(By.xpath("//div[@id='messages_container']//span[@class='ui-growl-title']"));
 
     @Step("Logowanie za pomoca: user: {1}, pass: {2}")
     public void login(String login, String password) {
@@ -28,13 +28,13 @@ public class Login extends _TestBase {
     }
 
     @Step("Pobieranie wiadomosci z bledem logowania")
-    public String getErrorMessage(){
-        return errorMessages.get(0).getText();
+    public SelenideElement getErrorMessage(){
+        return errorMessages.get(0);
     }
 
     @Step("Pobieranie drugiej wiadomosci z bledem logowania")
-    public String getSecondErrorMessage(){
-        return errorMessages.get(1).getText();
+    public SelenideElement getSecondErrorMessage(){
+        return errorMessages.get(1);
     }
 
 }

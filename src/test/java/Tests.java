@@ -8,10 +8,12 @@ import org.testng.*;
 import org.testng.annotations.*;
 import pages.*;
 import utils.Constants;
+
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Tests {
-    public WebDriver driver;
     Faker faker = new Faker();
 
 
@@ -35,6 +37,8 @@ public class Tests {
 
         //1. Przejscie na strone logowania
         open(Constants.testurl);
+        getWebDriver().manage().window().maximize();
+
         new _TestBase().clickLogin();
 
 
@@ -42,9 +46,8 @@ public class Tests {
         // 2. Logowanie bez danych
         Login objLogin = new Login();
         objLogin.login("","");
-        objLogin.getErrorMessage();
-        Assert.assertEquals(objLogin.getErrorMessage(), "Pole Email jest wymagane.");
-        Assert.assertEquals(objLogin.getSecondErrorMessage(), "Pole Hasło jest wymagane.");
+        objLogin.getErrorMessage().shouldHave(text("Pole Email jest wymagane."));
+        objLogin.getSecondErrorMessage().shouldHave(text("Pole Hasło jest wymagane."));
 
         // 3. Poprawne logowanie
 
@@ -61,12 +64,15 @@ public class Tests {
     public void test002_fillExpertsApplication(/*String name, String password, String password*/) throws Exception {
 
         //  1. Przejście do programow
-        new _TestBase().clickPrograms();
+        HomePage objHomePage =new HomePage();
+        objHomePage.deleteExistingApplications();
+        objHomePage.clickPrograms();
+
 
 
         //2. przejscie do expert application
-        HomePage objHomePage =new HomePage();
-        objHomePage.clickFillExpertsApplication();
+
+        new Applications().clickFillExpertsApplication();
 
         //3. Uzupelnianie formularza
         ExpertsApplication objExpertsApplication = new ExpertsApplication();
@@ -79,7 +85,7 @@ public class Tests {
         Assert.assertEquals(objExpertsApplication.getBottomErrorHeaderText(),"Twój formularz zawiera 1 lub więcej błędów");
         objExpertsApplication.clickInterestedInNawaCheckbox();
         objExpertsApplication.selectRandomNawaProgram();
-        objExpertsApplication.selectSecondRandomNawaProgram();
+       // objExpertsApplication.selectSecondRandomNawaProgram();
 
         objExpertsApplication.setAcademicTitle(faker.streetSuffix());
         objExpertsApplication.setPhoneNumber("123456987");
