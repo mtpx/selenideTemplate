@@ -13,13 +13,11 @@ import java.util.Random;
 
 public class Utils {
     public static void selectRandomValueFromDropdown(SelenideElement element) {
-        //  driver.findElement(by).click();
         Select dropdown = new Select(element);
         List<WebElement> l = dropdown.getOptions();
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(l.size()-1) + 1;
         dropdown.selectByIndex(randomInt);
-        //   result = true;
     }
 /*
     public static void safeSendKeys(WebElement element, String keys) {
@@ -109,12 +107,12 @@ public class Utils {
         }
         Assert.assertEquals(clicked,true, "exception");
     }
-
+*/
     public static String generateRandomString(int n)
     {
 
         // chose a Character random from this String
-        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ " + "0123456789 " + "abcdefghijklmnopqrstuvxyz ";
 
         // create StringBuffer size of AlphaNumericString
         StringBuilder sb = new StringBuilder(n);
@@ -130,7 +128,7 @@ public class Utils {
         }
         return sb.toString();
     }
-*/
+
 
     public static String getLongDescription()
     {

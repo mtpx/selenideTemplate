@@ -19,11 +19,12 @@ public class Login extends _TestBase {
     private static List<SelenideElement> errorMessages = $$(By.xpath("//div[@id='messages_container']//span[@class='ui-growl-title']"));
 
     @Step("Logowanie za pomoca: user: {1}, pass: {2}")
-    public void login(String login, String password) {
+    public void login(String login, String password) throws InterruptedException {
         $(this.email).clear();
         $(this.password).clear();
-        $(this.email).sendKeys(login);
-        $(this.password).sendKeys(password);
+        $(this.email).setValue(login);
+        $(this.password).setValue(password);
+        Thread.sleep(200);
         $(this.loginButton).click();
     }
 

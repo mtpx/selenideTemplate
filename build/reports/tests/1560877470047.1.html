@@ -1,0 +1,175 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head id="j_idt2"><link type="text/css" rel="stylesheet" href="/javax.faces.resource/stylesheet.css?ln=css"><link type="text/css" rel="stylesheet" href="/javax.faces.resource/components.css?ln=primefaces&amp;v=6.2"><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="/javax.faces.resource/jquery/jquery.js?ln=primefaces&amp;v=6.2"></script><script type="text/javascript" src="/javax.faces.resource/jquery/jquery-plugins.js?ln=primefaces&amp;v=6.2"></script><script type="text/javascript" src="/javax.faces.resource/core.js?ln=primefaces&amp;v=6.2"></script><script type="text/javascript" src="/javax.faces.resource/components.js?ln=primefaces&amp;v=6.2"></script><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='pl';}</script><script type="text/javascript" src="/javax.faces.resource/header.js?ln=js"></script>
+        <title>Logowanie / Rejestracja</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="shortcut icon" href="/javax.faces.resource/img/favicon.ico" type="image/x-styleClass"><script type="text/javascript" src="/javax.faces.resource/api.js?ln=js"></script><script type="text/javascript" src="/javax.faces.resource/calendar_pl.js?ln=js"></script><script type="text/javascript" src="/javax.faces.resource/calendar_en.js?ln=js"></script><script type="text/javascript" src="/javax.faces.resource/footer.js?ln=js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-113446638-1"></script><script type="text/javascript">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-113446638-1');
+		</script></head><body id="body" class="  page-jsf-authentication-login"><span id="messages"></span><div id="j_idt14" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container" style="width: auto; height: auto;" role="dialog" aria-labelledby="j_idt14_title" aria-hidden="true"><div class="ui-dialog-content ui-widget-content" style="height: auto;"><img id="j_idt15" src="" alt=""></div></div>
+
+		<div>
+
+				<!--&lt;p:submenu label="Projekty" rendered="false"&gt;
+                    &lt;p:menuitem value="Teczki projekt&oacute;w"     /&gt;
+                    &lt;p:menuitem value="Raporty"      /&gt;
+                &lt;/p:submenu&gt;-->
+
+				<div class="module -header  -white  " style="position: fixed; top: 0px; width: 100%; z-index: 10000;">
+					<div class="wrapper main ">
+						<div class="grid -flexible ">
+<form id="j_idt18" name="j_idt18" method="post" action="/login" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt18" value="j_idt18">
+
+								<div class="grid__item  -width-20 logofix logohed -hidden -float-left -margin-left-50" style="visibility: hidden;"><a href="https://nawa.gov.pl" class="ui-link ui-widget">
+										<figure class="header__figure"></figure></a>
+								</div>
+
+								<div class="grid__item -width-25 -float-right ">
+									<div><div id="j_idt18:j_idt25" class="ui-menu ui-menubar ui-widget ui-widget-content ui-corner-all ui-helper-clearfix -float-right accessibility-menu  -white" role="menubar"><div tabindex="0" class="ui-helper-hidden-accessible"></div><ul class="ui-menu-list ui-helper-reset"><li class="ui-menuitem ui-widget ui-corner-all" role="menuitem"><a tabindex="-1" class="ui-menuitem-link ui-corner-all" href="#" onclick="PrimeFaces.addSubmitParam('j_idt18',{'j_idt18:j_idt27':'j_idt18:j_idt27'}).submit('j_idt18');return false;PrimeFaces.onPost();"><span class="ui-menuitem-text">EN</span></a></li><li class="ui-menuitem ui-widget ui-corner-all" role="menuitem"><a tabindex="-1" class="ui-menuitem-link ui-corner-all font-12" href="#" onclick="PrimeFaces.ab({s:&quot;j_idt18:j_idt28&quot;,f:&quot;j_idt18&quot;});return false;"><span class="ui-menuitem-text">A</span></a></li><li class="ui-menuitem ui-widget ui-corner-all" role="menuitem"><a tabindex="-1" class="ui-menuitem-link ui-corner-all font-16" href="#" onclick="PrimeFaces.ab({s:&quot;j_idt18:j_idt29&quot;,f:&quot;j_idt18&quot;});return false;"><span class="ui-menuitem-text">A</span></a></li><li class="ui-menuitem ui-widget ui-corner-all" role="menuitem"><a tabindex="-1" class="ui-menuitem-link ui-corner-all font-20" href="#" onclick="PrimeFaces.ab({s:&quot;j_idt18:j_idt30&quot;,f:&quot;j_idt18&quot;});return false;"><span class="ui-menuitem-text">A</span></a></li><li class="ui-menuitem ui-widget ui-corner-all" role="menuitem"><a tabindex="-1" class="ui-menuitem-link ui-corner-all icon-adjust font-18" href="#" onclick="PrimeFaces.ab({s:&quot;j_idt18:j_idt31&quot;,f:&quot;j_idt18&quot;});return false;"><span class="ui-menuitem-text"></span></a></li></ul></div><div id="j_idt18:j_idt32" class="ui-menu ui-menubar ui-widget ui-widget-content ui-corner-all ui-helper-clearfix -float-right  loginaccmenu -white" role="menubar"><div tabindex="0" class="ui-helper-hidden-accessible"></div><ul class="ui-menu-list ui-helper-reset"><li class="ui-menuitem ui-widget ui-corner-all" role="menuitem"><a tabindex="-1" class="ui-menuitem-link ui-corner-all" href="#" onclick="PrimeFaces.addSubmitParam('j_idt18',{'j_idt18:j_idt34':'j_idt18:j_idt34'}).submit('j_idt18');return false;PrimeFaces.onPost();"><span class="ui-menuitem-text">EN</span></a></li><li class="ui-menuitem ui-widget ui-corner-all" role="menuitem"><a tabindex="-1" class="ui-menuitem-link ui-corner-all icon-adjust font-18" href="#" onclick="PrimeFaces.ab({s:&quot;j_idt18:j_idt35&quot;,f:&quot;j_idt18&quot;});return false;"><span class="ui-menuitem-text"></span></a></li></ul></div>
+									</div><!--grid__item-->
+								</div><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="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" autocomplete="off">
+</form>
+						</div><!--grid-->
+					</div><!--/wrapper-->
+				</div><!--/module-->
+
+
+			<div class="wrapper main">
+				<div class="-margin-top-100 logocenter" style="opacity: 1;"><a href="https://nawa.gov.pl" class="ui-link ui-widget">
+						<figure class="header__figure logodiv" style="visibility: visible; display: block; transform: scale(0.23);"></figure></a>
+				</div>
+<form id="loginform" name="loginform" method="post" action="/login" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="loginform" value="loginform">
+<input id="login-do" type="hidden" name="login-do" value="true">
+            <!--&lt;p:messages id="errorMessages" showDetail="false" /&gt;-->
+            <div class="layout-table ">
+                <div class="layout-table__cell -width-20"></div><!-- layout-table__cell -->
+                <div class="layout-table__cell -width-30">
+
+                    <div class="push-30"><span class="font-35 color-beta push-5  font-slim">Witaj w NAWA</span>
+                    </div><a href="/login" id="j_idt47"><span class="font-20 color-beta push-5  font-slim like-text">Logowanie</span></a>
+                    <span class="font-slim font-24 color-beta "> / </span><a href="/register" id="j_idt50"><span class="font-20 color-beta push-5  font-slim ">Rejestracja</span></a>
+                        <hr class="push-20">
+
+                        <div class="form-text  push-20"><label id="j_idt53" class="ui-outputlabel ui-widget" for="email">Email<span class="ui-outputlabel-rfi">*</span></label><input id="email" name="email" type="text" autocomplete="off" aria-required="true" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" role="textbox" aria-disabled="false" aria-readonly="false"><span id="emailmsg"></span>
+
+
+                        </div>
+
+                        <div class="form-text  push-20"><label id="j_idt55" class="ui-outputlabel ui-widget" for="password">Hasło<span class="ui-outputlabel-rfi">*</span></label><input id="password" name="password" type="password" class="ui-inputfield ui-password ui-widget ui-state-default ui-corner-all" autocomplete="off" aria-required="true" role="textbox" aria-disabled="false" aria-readonly="false"><span id="passwordmsg"></span><a href="/password-reset" class="ui-link ui-widget font-12 line-height-30  -text-right -block ">Przypomnij hasło</a>
+                        </div>
+
+                        <div class="form-checkbox push-40"><input id="remember-me" type="checkbox" name="remember-me"><label id="j_idt58" class="ui-outputlabel ui-widget" for="remember-me">Zapamiętaj mnie</label>
+                        </div>
+                        <div class="grid -flexible  -gap-25">
+                            <div class="grid__item"><a href="/register" id="j_idt60"><span class="button -secondary -md">Załóż konto</span></a>
+
+                            </div><!-- grid__item  -->
+                            <div class="grid__item -text-right"><button id="loginButton" name="loginButton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only button -primary -md push-20" onclick="PrimeFaces.bcn(this,event,[function(event){e.preventDefault(); return true;},function(event){PrimeFaces.onPost();}]);" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Zaloguj</span></button>
+                            </div><!-- grid__item
+                                        -->
+                        </div><!-- grid -->
+                </div><!-- layout-table__cell -->
+                <div class="layout-table__cell -width-50"></div><!-- layout-table__cell -->
+            </div><!-- layout-table --><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:1" value="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" autocomplete="off">
+</form>
+			</div>
+    <div class="module -anna footer" style="display: block; position: relative;">
+        <div class="wrapper">
+            <div class="module -md">
+
+                <div class="grid -gap-45 ">
+                    <div class="footerblock grid__item -width-35 ">
+                    <div class="grid__item -width-35 footerquest"><span class="font-20 font-slim push-30 -inline-block">Pytania i odpowiedzi</span><div id="j_idt69" class="ui-accordion ui-widget ui-helper-reset ui-hidden-container footerquest1 " role="tablist" data-widget="widget_j_idt69"><div class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="0"><span class="ui-icon ui-icon-triangle-1-e"></span>Informacje odnośnie wymagań systemowych dla użytkowników systemu NAWA</div><div id="j_idt69:j_idt70" class="ui-accordion-content ui-helper-reset ui-widget-content ui-helper-hidden" role="tabpanel" aria-hidden="true"><span class="answ1 ">System NAWA obsługuje przeglądarki (w wersjach wskazanych poniżej lub nowszych):<br><ul><li>Microsoft Edge v.15</li><li>Chrome v.63</li><li>FireFox v.57</li><li>Safari v.10</li></ul></span></div><div class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="0"><span class="ui-icon ui-icon-triangle-1-e"></span>Czy wspieracie urządzenia mobilne?</div><div id="j_idt69:j_idt72" class="ui-accordion-content ui-helper-reset ui-widget-content ui-helper-hidden" role="tabpanel" aria-hidden="true"><span class="answ2 ">Tak, jednak wiele czynności wygodniej wykonasz na urządzeniu z większym ekranem i fizyczną klawiaturą.</span></div><div class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="0"><span class="ui-icon ui-icon-triangle-1-e"></span>Nie doszedł do mnie email rejestracyjny</div><div id="j_idt69:j_idt74" class="ui-accordion-content ui-helper-reset ui-widget-content ui-helper-hidden" role="tabpanel" aria-hidden="true"><span class="answ3 ">Email potwierdzający rejestrację jest wysyłany automatycznie na podany w formularzu adres email. Sprawdź folder 'spam' - czasem trafiają do niego wiadomości generowane automatycznie. Upewnij się, że zarejestrowałaś/-eś się na prawidłowy adres email (bez literówek). Spróbuj zalogować się na swoje konto - jeśli adres był prawidłowy, otrzymasz email rejestracyjny ponownie.</span></div><div class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="0"><span class="ui-icon ui-icon-triangle-1-e"></span>Nie mogę się zalogować</div><div id="j_idt69:j_idt76" class="ui-accordion-content ui-helper-reset ui-widget-content ui-helper-hidden" role="tabpanel" aria-hidden="true"><span class="answ4">Sprawdź, czy potwierdziłeś swoje konto klikając na link aktywacyjny otrzymany w mailu. A być może próbujesz wprowadzić błędne hasło. </span></div><input type="hidden" id="j_idt69_active" name="j_idt69_active" value="-1" autocomplete="off"></div><img id="j_idt78" alt="" src="/javax.faces.resource/spacer/dot_clear.gif?ln=primefaces&amp;v=6.2"><img id="j_idt79" alt="" src="/javax.faces.resource/spacer/dot_clear.gif?ln=primefaces&amp;v=6.2">
+                    </div><!--grid__item-->
+                    <div class="grid__item -width-35 footerquest  "><span class="font-20 font-slim  push-30 -inline-block footerelem"> &nbsp;</span><div id="j_idt82" class="ui-accordion ui-widget ui-helper-reset ui-hidden-container footerquest2" role="tablist" data-widget="widget_j_idt82"><div class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="0"><span class="ui-icon ui-icon-triangle-1-e"></span>Nie pamiętam hasła</div><div id="j_idt82:j_idt83" class="ui-accordion-content ui-helper-reset ui-widget-content ui-helper-hidden" role="tabpanel" aria-hidden="true"><span class="answ5">Skorzystaj z opcji: 'Nie pamiętam hasła' w formularzu logowania. Po wpisaniu swojego adresu email (tego, na który zarejestrowałaś/-eś konto w systemie NAWA) otrzymasz wiadomość mailową. Dalej postępuj zgodnie z instrukcjami w mailu.</span></div><div class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="0"><span class="ui-icon ui-icon-triangle-1-e"></span>W jaki sposób mogę wypełnić wniosek?</div><div id="j_idt82:j_idt85" class="ui-accordion-content ui-helper-reset ui-widget-content ui-helper-hidden" role="tabpanel" aria-hidden="true"><span class="answ6">W pierwszej kolejności musisz zarejestrować się w systemie NAWA. Po zalogowaniu do systemu dostępna jest informacja, w których programach prowadzimy aktualnie nabory. Dla wybranego programu kliknij przycisk 'Wypełnij wniosek', a następnie uzupełnij formularz. </span></div><div class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="0"><span class="ui-icon ui-icon-triangle-1-e"></span>Czy muszę wysłać wniosek zaraz po wypełnieniu?</div><div id="j_idt82:j_idt87" class="ui-accordion-content ui-helper-reset ui-widget-content ui-helper-hidden" role="tabpanel" aria-hidden="true"><span class="answ7">Możesz wysłać wniosek natychmiast po wypełnieniu. Ale możesz też zapisać szkic wniosku, jeśli nie jesteś w stanie skompletować wszystkich informacji za jednym razem. Po ponownym zalogowaniu Twój szkic będzie nadal widoczny i będziesz mógł go ponownie wyedytować i wysłać. Pamiętaj jednak, jeśli termin naboru minął, nie będziesz mógł już wysłać wniosku. Po drugie, wniosku wysłanego nie będziesz już mógł dowolnie edytować - rozpoczął się jego obieg urzędowy.</span></div><div class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false" aria-selected="false" tabindex="0"><span class="ui-icon ui-icon-triangle-1-e"></span>Złożyłam/-em wniosek i co dalej?</div><div id="j_idt82:j_idt89" class="ui-accordion-content ui-helper-reset ui-widget-content ui-helper-hidden" role="tabpanel" aria-hidden="true"><span class="answ8">Złożony wniosek przechodzi przez etap oceny formalnej. Pracownicy Narodowej Agencji Wymiany Akademickiej dokonują wstępnej oceny kompletności Twojego wniosku. Jeśli nie załączyłaś/-eś któregoś z wymaganych plików lub załączony plik jest nieczytelny, zostaniesz poproszony o uzupełnienie wniosku. Otrzymasz wtedy stosowne powiadomienie i będziesz zobligowany/-a uzupełnić braki w formularzu uzupełniającym w systemie NAWA. Po uzupełnieniu braków, jeśli wszystko jest w porządku, Twój wniosek przejdzie do etapu oceny merytorycznej. Będziesz informowany o każdym ważnym etapie procesowania wniosku, a także o wyniku rozpatrzenia wniosku.</span></div><input type="hidden" id="j_idt82_active" name="j_idt82_active" value="-1" autocomplete="off"></div>
+
+                    </div><!--grid__item
+                 -->
+                    </div><!-- footer all-->
+                    <div class="grid__item -border-left ">
+<form id="contactdetails" name="contactdetails" method="post" action="/login" class="footercontact" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="contactdetails" value="contactdetails">
+<span class="font-20 font-slim push-15 -inline-block">Kontakt</span>
+
+                            <div class="module -sm">
+                                <i class="icon-phone font-20 -padding-right-12"></i><a href="https://nawa.gov.pl/kontakt" target="_blank" class="button -quaternary -md rwdwritetous">Kontakty do programów NAWA</a>
+
+                            </div><!--module-->
+                            <div class="module -sm">
+                                <i class="icon-envelope font-20 -padding-right-10"></i><input type="button" name="contactdetails:j_idt97" value="Napisz do nas" class="button -quaternary -md rwdwritetous" onclick="PF('dlg123454').show()">
+                            </div><!--module--><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:2" value="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" autocomplete="off">
+</form>
+                    </div><!--grid__item-->
+                </div><!--grid-->
+            </div><!--module-->
+        </div><!--wrapper-->
+        <div class="appversion">
+        </div>
+    </div><!--module--><div id="dlg123454" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container writetous" role="dialog" aria-labelledby="dlg123454_title" aria-hidden="true" style="width: auto; height: auto;"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="dlg123454_title" class="ui-dialog-title">Napisz do nas</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close" role="button"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" style="height: auto;">
+<form id="contactform" name="contactform" method="post" action="/login" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="contactform" value="contactform">
+
+            <div class="layout-table -padding-top-30 -padding-bottom-30">
+                <div class="layout-table__cell -width-10"></div><!-- layout-table__cell
+             --><div class="layout-table__cell -width-70 push-in-20">
+                    <div class="grid -flexible -gap-20">
+                        <div class="grid__item -width-100">
+                            <div class="form-select"><label id="contactform:j_idt103" class="ui-outputlabel ui-widget" for="contactform:subject">Wybierz temat</label>
+                                <div class="form-select__icon menuwritetous"><select id="contactform:subject" name="contactform:subject" size="1">	<option value="rejestracja / aktywacja konta">rejestracja / aktywacja konta</option>
+	<option value="logowanie / zmiana hasła">logowanie / zmiana hasła</option>
+	<option value="wnioskowanie do programu">wnioskowanie do programu</option>
+	<option value="wypełnianie / składanie wniosku">wypełnianie / składanie wniosku</option>
+	<option value="obsługa złożonego wniosku">obsługa złożonego wniosku</option>
+	<option value="inne">inne</option>
+</select>
+                                </div><!-- form-select__icon
+                         --></div><!-- form-select
+                     --></div><!-- grid__item
+                 --></div><!-- grid
+                 --><div class="grid -flexible -gap-20 push-20">
+                        <div class="grid__item -width-50">
+                            <div class="form-text"><label id="contactform:j_idt112" class="ui-outputlabel ui-widget" for="contactform:firstname">Imię<span class="ui-outputlabel-rfi">*</span></label><input id="contactform:firstname" name="contactform:firstname" type="text" aria-required="true" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" role="textbox" aria-disabled="false" aria-readonly="false"><span id="contactform:firstnamemsg"></span>
+                            </div><!-- form-text
+                     --></div><!-- grid__item
+                     --><div class="grid__item -width-50">
+                            <div class="form-text"><label id="contactform:j_idt114" class="ui-outputlabel ui-widget" for="contactform:lastname">Nazwisko<span class="ui-outputlabel-rfi">*</span></label><input id="contactform:lastname" name="contactform:lastname" type="text" aria-required="true" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" role="textbox" aria-disabled="false" aria-readonly="false"><span id="contactform:lastnamemsg"></span>
+                            </div><!-- form-text
+                    --></div><!-- grid__item
+                 --></div><!-- grid
+                 --><div class="grid -flexible -gap-20 push-20">
+                        <div class="grid__item -width-50">
+                            <div class="form-text"><label id="contactform:j_idt116" class="ui-outputlabel ui-widget" for="contactform:email">Email<span class="ui-outputlabel-rfi">*</span></label><input id="contactform:email" name="contactform:email" type="text" aria-required="true" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" role="textbox" aria-disabled="false" aria-readonly="false"><span id="contactform:emailmsg"></span>
+                            </div><!-- form-text
+                     --></div><!-- grid__item
+                     --><div class="grid__item -width-50">
+                            <div class="form-text"><label id="contactform:j_idt118" class="ui-outputlabel ui-widget" for="contactform:phone">Telefon</label><input id="contactform:phone" name="contactform:phone" type="text" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" role="textbox" aria-disabled="false" aria-readonly="false"><span id="contactform:phonemsg"></span>
+                            </div><!-- form-text
+                     --></div><!-- grid__item
+                 --></div><!-- grid
+                 --><div class="grid -flexible -gap-20 push-20">
+                        <div class="grid__item -width-100">
+                            <div class="form-textarea"><label id="contactform:j_idt120" class="ui-outputlabel ui-widget" for="contactform:content">Treść<span class="ui-outputlabel-rfi">*</span></label><textarea id="contactform:content" name="contactform:content" cols="20" rows="4" maxlength="500" aria-required="true" class="ui-inputfield ui-inputtextarea ui-widget ui-state-default ui-corner-all ui-inputtextarea-resizable"></textarea><span id="contactform:contentmsg"></span>
+                            </div><!-- form-textarea
+                     --></div><!-- grid__item
+                  --></div><!-- grid
+                  --><div class="grid -flexible -gap-25">
+                        <div class="grid__item -width-50">
+                        </div><!-- grid__item
+                     --><div class="grid__item -text-right -width-50"><a id="contactform:sendContactForm" href="#" class="ui-commandlink ui-widget button -primary -md" onclick="PrimeFaces.ab({s:&quot;contactform:sendContactForm&quot;,u:&quot;contactform:firstnamemsg contactform:lastnamemsg contactform:emailmsg contactform:contentmsg contactform:subject contactform:firstname contactform:lastname contactform:email contactform:phone contactform:content&quot;});return false;">Wyślij</a>
+                        </div><!-- grid__item
+                 --></div><!-- grid
+             --></div><!-- layout-table__cell
+             --><div class="layout-table__cell -width-10"></div><!-- layout-table__cell
+             --></div><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:3" value="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" autocomplete="off">
+</form></div></div>
+
+
+		</div>
+
+
+<div id="textarea_simulator" style="position: absolute; top: 0px; left: 0px; visibility: hidden;"></div><div id="messages_container" class="ui-growl ui-widget" style="z-index: 1001;"></div><div class="ui-dialog-docking-zone"></div></body></html>

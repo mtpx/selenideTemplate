@@ -118,17 +118,18 @@ public class ExpertsApplication extends _TestBase {
     public void selectRandomThematicScopeProgram(){
         System.out.println("selected prog: "+nawaProgramsSelect.getSelectedOption());
         System.out.println("selected prog: "+nawaProgramsSelect.getAttribute("value"));
-        System.out.println("1: "+nawaProgramsSelect.getAttribute("value") == "1");
-        System.out.println("2: "+nawaProgramsSelect.getAttribute("value") == "2");
-        System.out.println("3: "+nawaProgramsSelect.getAttribute("value") == "3");
-        System.out.println("4: "+nawaProgramsSelect.getAttribute("value") == "4");
-        System.out.println("5: "+nawaProgramsSelect.getAttribute("value") == "5");
-        System.out.println("6: "+nawaProgramsSelect.getAttribute("value") == "6");
-        if(nawaProgramsSelect.getSelectedOption().getValue() == "2" || nawaProgramsSelect.getSelectedOption().getValue() == "4" ) {
+        String program = nawaProgramsSelect.getAttribute("value");
+        System.out.println(program);
+
+
+       if(program.equals("2") || program.equals("4") ) {
             selectRandomValueFromDropdown(thematicScopeSelect_bd);
             selectRandomValueFromDropdown(thematicScopeSelect_bd_2);
-        }else
-            selectRandomValueFromDropdown(thematicScopeSelect_acfg);
+        }
+       else if (program.equals("1") || program.equals("3") || program.equals("5") || program.equals("6")) {
+           System.out.println("1 or 3 5 6");
+           selectRandomValueFromDropdown(thematicScopeSelect_acfg);
+       }
     }
 
     @Step("Wybor losowego poziomu jezyka")

@@ -3,7 +3,6 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.openqa.selenium.WebDriver;
 import org.testng.*;
 import org.testng.annotations.*;
 import pages.*;
@@ -11,7 +10,7 @@ import utils.Constants;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static utils.Utils.generateRandomString;
 
 public class Tests {
     Faker faker = new Faker();
@@ -19,73 +18,70 @@ public class Tests {
 
     @BeforeClass
     public void setUp() throws Exception {
-        Configuration.browser="chrome";
+        Configuration.browser = "chrome";
         Configuration.timeout = 10000;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     }
+
     @BeforeMethod
     public void beforeTest() {
-//        driver.manage().deleteAllCookies();
-        //      driver.get(Constant.testurl);
+        //driver.manage().deleteAllCookies();
 
     }
 
-    @Test(enabled=true, priority=1, description="Logowanie")
+    @Test(enabled = true, priority = 1, description = "Logowanie")
     @Description("Logowanie: bez danych/logowanie poprawne")
     //@Parameters({ "name", "phone", "password", "001regFeedback", "blankValidationError" })
     public void test001_logowanie(/*String name, String password, String password*/) throws Exception {
 
         //1. Przejscie na strone logowania
         open(Constants.testurl);
-        getWebDriver().manage().window().maximize();
+        //getWebDriver().manage().window().maximize();
 
         new _TestBase().clickLogin();
 
 
-
         // 2. Logowanie bez danych
         Login objLogin = new Login();
-        objLogin.login("","");
+        objLogin.login("", "");
         objLogin.getErrorMessage().shouldHave(text("Pole Email jest wymagane."));
         objLogin.getSecondErrorMessage().shouldHave(text("Pole Hasło jest wymagane."));
 
         // 3. Poprawne logowanie
 
-        objLogin.login("matpanx@gmail.com","Bmxheni@1");
+        objLogin.login("matpanx@gmail.com", "Bmxheni@1");
 
         //   Thread.sleep(4000);
 
 
     }
 
-    @Test(enabled=true, priority=1)
+    @Test(enabled = true, priority = 1)
     @Description("Wypelnianie wniosku Eksperckiego")
     //@Parameters({ "name", "phone", "password", "001regFeedback", "blankValidationError" })
     public void test002_fillExpertsApplication(/*String name, String password, String password*/) throws Exception {
 
         //  1. Przejście do programow
-        HomePage objHomePage =new HomePage();
+        HomePage objHomePage = new HomePage();
         objHomePage.deleteExistingApplications();
         objHomePage.clickPrograms();
 
-
-
         //2. przejscie do expert application
-
-        new Applications().clickFillExpertsApplication();
+        Applications objApplications = new Applications();
+        objApplications.clickFillExpertsApplication();
 
         //3. Uzupelnianie formularza
         ExpertsApplication objExpertsApplication = new ExpertsApplication();
         objExpertsApplication.clickPolishLanguageCheckbox();
         objExpertsApplication.clickSubmitApplicationButton();
         objExpertsApplication.clickSavingDraftTitleCloseButton();
-        Assert.assertEquals(objExpertsApplication.getValidationErrorDialogBoxLabelText(),"Występują błędy walidacji. Proszę sprawdzić, czy wszystkie pola zostały wypełnione poprawnie.");
+        Assert.assertEquals(objExpertsApplication.getValidationErrorDialogBoxLabelText(), "Występują błędy walidacji. Proszę sprawdzić, czy wszystkie pola zostały wypełnione poprawnie.");
         objExpertsApplication.clickOkOnValidationErrorDialogBox();
 
-        Assert.assertEquals(objExpertsApplication.getBottomErrorHeaderText(),"Twój formularz zawiera 1 lub więcej błędów");
+        Assert.assertEquals(objExpertsApplication.getBottomErrorHeaderText(), "Twój formularz zawiera 1 lub więcej błędów");
         objExpertsApplication.clickInterestedInNawaCheckbox();
         objExpertsApplication.selectRandomNawaProgram();
-       // objExpertsApplication.selectSecondRandomNawaProgram();
+        // objExpertsApplication.selectSecondRandomNawaProgram();
 
         objExpertsApplication.setAcademicTitle(faker.streetSuffix());
         objExpertsApplication.setPhoneNumber("123456987");
@@ -93,30 +89,28 @@ public class Tests {
         objExpertsApplication.selectRandomEnglishLevel();
         objExpertsApplication.clickRequiredCheckboxes();
 
-
-
         objExpertsApplication.clickSaveAsCopyButton();
         objExpertsApplication.waitForDraftSavedTitleToDisappear();
         objExpertsApplication.clickMyApplications();
         objHomePage.clickDeleteFirstApplication();
         objHomePage.clickConfirmDeleteApplication();
-
-
     }
 
-/*
-    @Tests (enabled=true, priority=1)
+
+
+    @Test (enabled=true, priority=1)
     //@Parameters({ "name", "phone", "password", "001regFeedback", "blankValidationError" })
-    public void test003_fillPolishLanguagePromotion(/*String name, String password, String password) throws Exception {
+    public void test003_fillPolishLanguagePromotion() throws Exception {
 
         // 1. Przejście do programow
-        HomePage objHomePage = new HomePage(driver);
+        HomePage objHomePage = new HomePage();
+        //objHomePage.deleteExistingApplications();
         objHomePage.clickPrograms();
 
-        Applications objApplications = new Applications(driver);
+        Applications objApplications = new Applications();
         objApplications.clickFillPolishLanguagePromotion();
 
-        PolishLanguagePromotion objPolishLanguagePromotion = new PolishLanguagePromotion(driver);
+        PolishLanguagePromotion objPolishLanguagePromotion = new PolishLanguagePromotion();
         objPolishLanguagePromotion.setProjectRealizationPlace(faker.streetSuffix());
         objPolishLanguagePromotion.clickNextPageOfApplication();
 
@@ -128,7 +122,7 @@ public class Tests {
         objPolishLanguagePromotion.selectRandomAuthorizationToSendApplication();
         objPolishLanguagePromotion.setContactPerson(faker.firstName(), faker.lastName(), faker.country(),"xxx@asd.pl","794350654");
         objPolishLanguagePromotion.setFinanceContactPerson(faker.firstName(), faker.lastName(), faker.country(),"xxx@asd.pl","794350654");
-        objPolishLanguagePromotion.setDescriptionOfApplicant(getLongDescription());
+        objPolishLanguagePromotion.setDescriptionOfApplicant(generateRandomString(1010));
         objPolishLanguagePromotion.setExperienceOfApplicant(generateRandomString(1010));
         objPolishLanguagePromotion.clickNextPageOfApplication();
 
@@ -153,13 +147,6 @@ public class Tests {
         objPolishLanguagePromotion.setRiskImpactMinimalization(generateRandomString(15));
 
 
-
-
-        Thread.sleep(4000);
-
     }
-
-*/
-
 
 }

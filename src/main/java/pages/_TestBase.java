@@ -15,7 +15,8 @@ public class _TestBase {
     //lokalizatory
 
     private SelenideElement login = $(".c-programs > a");
-    private List<SelenideElement> applicationsMenu = $$(By.xpath("//div[@class='grid__item -inline-flex']//a"));
+    private SelenideElement programs = $(".c-programs > a");
+    private List<SelenideElement> applicationsMenu = $$(By.xpath("//div[@class='grid__item -inline-flex']//a//span"));
 
     @Step("Przejście na stronę logowania")
     public void clickLogin() {
