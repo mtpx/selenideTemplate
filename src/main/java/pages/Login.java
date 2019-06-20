@@ -1,13 +1,13 @@
 package pages;
 
-import static com.codeborne.selenide.Selenide.*;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
-
-import static utils.Utils.*;
 import java.util.List;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class Login extends _TestBase {
 

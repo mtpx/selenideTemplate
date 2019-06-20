@@ -1,13 +1,15 @@
 
 package pages;
-import static com.codeborne.selenide.Selenide.*;
-
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+
 import java.util.List;
-import static utils.Utils.*;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+import static utils.Utils.selectRandomValueFromDropdown;
 
 
 public class ExpertsApplication extends _TestBase {
@@ -100,12 +102,7 @@ public class ExpertsApplication extends _TestBase {
         this.phoneNumberInput.sendKeys(phoneNumberInput);
     }
 
-    @Step("Czekanie na znikniecie komunikatu")
-    public void waitForDraftSavedTitleToDisappear() throws InterruptedException {
-    //    Thread.sleep(500);
-        savingDraftTitle.shouldBe(Condition.visible);
-        savingDraftTitle.should(Condition.disappear);
-    }
+
 
     @Step("Ustawienie tytulu akademickiego {1}")
     public void setAcademicTitle(String academicTitleInput){
@@ -158,7 +155,10 @@ public class ExpertsApplication extends _TestBase {
 
     @Step("Zapisz kopie robocza")
     public void clickSaveAsCopyButton() {
+
         saveAsCopyButton.click();
+       savingDraftTitle.should(Condition.appear);
+       savingDraftTitle.should(Condition.disappear);
     }
 
     @Step("Szkic zostal zapisany - zamkniecie boxa")

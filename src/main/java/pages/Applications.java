@@ -22,7 +22,7 @@ public class Applications extends _TestBase {
     @Step("Wypelnij wniosek: Experci")
     public void clickFillExpertsApplication() throws InterruptedException {
         fillExpertsApplication.click();
-        Thread.sleep(2000);
+        Thread.sleep(100);
         if (fillExpertsApplication.isDisplayed()){
             fillExpertsApplication.click();
         }

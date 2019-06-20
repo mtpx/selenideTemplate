@@ -1,12 +1,15 @@
-import com.codeborne.selenide.*;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
-import io.qameta.allure.*;
+import io.qameta.allure.Description;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.testng.*;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.*;
 import utils.Constants;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.open;
@@ -15,18 +18,18 @@ import static utils.Utils.generateRandomString;
 public class Tests {
     Faker faker = new Faker();
 
-
+    private static final Logger log = LogManager.getLogger(Tests.class);
     @BeforeClass
     public void setUp() throws Exception {
+
         Configuration.browser = "chrome";
         Configuration.timeout = 10000;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     }
 
-    @BeforeMethod
+    @BeforeTest
     public void beforeTest() {
-        //driver.manage().deleteAllCookies();
-
+        log.info("staring test");
     }
 
     @Test(enabled = true, priority = 1, description = "Logowanie")
@@ -34,25 +37,22 @@ public class Tests {
     //@Parameters({ "name", "phone", "password", "001regFeedback", "blankValidationError" })
     public void test001_logowanie(/*String name, String password, String password*/) throws Exception {
 
-        //1. Przejscie na strone logowania
+
+        log.info("1. Przejscie na strone logowania");
         open(Constants.testurl);
         //getWebDriver().manage().window().maximize();
 
         new _TestBase().clickLogin();
 
-
-        // 2. Logowanie bez danych
+        log.info("2. Logowanie bez danych");
         Login objLogin = new Login();
         objLogin.login("", "");
         objLogin.getErrorMessage().shouldHave(text("Pole Email jest wymagane."));
         objLogin.getSecondErrorMessage().shouldHave(text("Pole Hasło jest wymagane."));
 
-        // 3. Poprawne logowanie
+        log.info("3. Poprawne logowanie");
 
         objLogin.login("matpanx@gmail.com", "Bmxheni@1");
-
-        //   Thread.sleep(4000);
-
 
     }
 
@@ -61,16 +61,16 @@ public class Tests {
     //@Parameters({ "name", "phone", "password", "001regFeedback", "blankValidationError" })
     public void test002_fillExpertsApplication(/*String name, String password, String password*/) throws Exception {
 
-        //  1. Przejście do programow
+        log.info("1. Przejście do programow");
         HomePage objHomePage = new HomePage();
         objHomePage.deleteExistingApplications();
         objHomePage.clickPrograms();
 
-        //2. przejscie do expert application
+        log.info("2. przejscie do expert application");
         Applications objApplications = new Applications();
         objApplications.clickFillExpertsApplication();
 
-        //3. Uzupelnianie formularza
+
         ExpertsApplication objExpertsApplication = new ExpertsApplication();
         objExpertsApplication.clickPolishLanguageCheckbox();
         objExpertsApplication.clickSubmitApplicationButton();
@@ -89,9 +89,11 @@ public class Tests {
         objExpertsApplication.selectRandomEnglishLevel();
         objExpertsApplication.clickRequiredCheckboxes();
 
+        log.info("3. Zapisywanie kopii roboczej");
         objExpertsApplication.clickSaveAsCopyButton();
-        objExpertsApplication.waitForDraftSavedTitleToDisappear();
         objExpertsApplication.clickMyApplications();
+
+        log.info("4. Usuwanie formularza");
         objHomePage.clickDeleteFirstApplication();
         objHomePage.clickConfirmDeleteApplication();
     }
@@ -102,18 +104,21 @@ public class Tests {
     //@Parameters({ "name", "phone", "password", "001regFeedback", "blankValidationError" })
     public void test003_fillPolishLanguagePromotion() throws Exception {
 
-        // 1. Przejście do programow
+
         HomePage objHomePage = new HomePage();
         //objHomePage.deleteExistingApplications();
         objHomePage.clickPrograms();
 
+        log.info("2. Wypełanie wniosku promocja jezyka polskiego");
         Applications objApplications = new Applications();
         objApplications.clickFillPolishLanguagePromotion();
 
+        log.info("3. Wypełanie pierwszej strony wniosku");
         PolishLanguagePromotion objPolishLanguagePromotion = new PolishLanguagePromotion();
         objPolishLanguagePromotion.setProjectRealizationPlace(faker.streetSuffix());
         objPolishLanguagePromotion.clickNextPageOfApplication();
 
+        log.info("4. Wypełanie drugiej strony wniosku");
         objPolishLanguagePromotion.selectRandomUnitStatus();
         objPolishLanguagePromotion.selectRandomUnitFullName();
         objPolishLanguagePromotion.setNip("1165830299");
@@ -126,6 +131,7 @@ public class Tests {
         objPolishLanguagePromotion.setExperienceOfApplicant(generateRandomString(1010));
         objPolishLanguagePromotion.clickNextPageOfApplication();
 
+        log.info("5. Wypełanie trzeciej strony wniosku");
         objPolishLanguagePromotion.clickNextPageOfApplication();
         objPolishLanguagePromotion.setProjectTitle(generateRandomString(15));
         objPolishLanguagePromotion.setProjectStartDate("2019-10-09");
@@ -147,6 +153,16 @@ public class Tests {
         objPolishLanguagePromotion.setRiskImpactMinimalization(generateRandomString(15));
 
 
+    }
+
+    @AfterTest
+    public void afterTest() {
+        log.info("test end");
+    }
+
+    @AfterClass
+    public void afterClass() {
+        log.info("all tests end");
     }
 
 }
