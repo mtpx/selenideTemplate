@@ -154,11 +154,10 @@ public class ExpertsApplication extends _TestBase {
     }
 
     @Step("Zapisz kopie robocza")
-    public void clickSaveAsCopyButton() {
+    public void giclickSaveAsCopyButton() throws InterruptedException {
 
         saveAsCopyButton.click();
-       savingDraftTitle.should(Condition.appear);
-       savingDraftTitle.should(Condition.disappear);
+        Thread.sleep(3000);
     }
 
     @Step("Szkic zostal zapisany - zamkniecie boxa")
