@@ -154,7 +154,7 @@ public class ExpertsApplication extends _TestBase {
     }
 
     @Step("Zapisz kopie robocza")
-    public void giclickSaveAsCopyButton() throws InterruptedException {
+    public void clickSaveAsCopyButton() throws InterruptedException {
 
         saveAsCopyButton.click();
         Thread.sleep(3000);

@@ -106,7 +106,7 @@ public class Tests {
 
 
         HomePage objHomePage = new HomePage();
-        //objHomePage.deleteExistingApplications();
+        objHomePage.deleteExistingApplications();
         objHomePage.clickPrograms();
 
         log.info("2. Wypełanie wniosku promocja jezyka polskiego");
