@@ -105,8 +105,9 @@ public class Tests {
     public void test003_fillPolishLanguagePromotion() throws Exception {
 
 
+        log.info("1. Przejście do programow");
         HomePage objHomePage = new HomePage();
-        objHomePage.deleteExistingApplications();
+        //objHomePage.deleteExistingApplications();
         objHomePage.clickPrograms();
 
         log.info("2. Wypełanie wniosku promocja jezyka polskiego");
