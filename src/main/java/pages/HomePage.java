@@ -5,27 +5,15 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.*;
 public class HomePage extends _TestBase {
 
-    private SelenideElement deleteFirstApplicationButton = $(By.xpath("//button[@id='j_idt122:applicationTable:0:j_idt162']"));
-    private SelenideElement confirmDeleteApplicationButton = $(By.xpath("//button[@id='j_idt122:j_idt143']"));
+    private SelenideElement searchQuery = $(By.xpath("//input[@name='q']"));
+    private SelenideElement searchButton = $(By.xpath("//div[@class='FPdoLc VlcLAe']//input[@name='btnK']"));
 
-
-    @Step("Usun pierwszy wniosek")
-    public void clickDeleteFirstApplication() {
-        deleteFirstApplicationButton.click();
+    @Step("Search")
+    public void search(String searchQuery) {
+        this.searchQuery.sendKeys(searchQuery);
+        searchButton.click();
     }
 
-    @Step("Potwierdzenie usuniecia wniosku")
-    public void clickConfirmDeleteApplication() {
-        confirmDeleteApplicationButton.click();
-    }
-
-    @Step("Usun istniejace wnioski")
-    public void deleteExistingApplications() {
-        if (deleteFirstApplicationButton.isDisplayed()) {
-            deleteFirstApplicationButton.click();
-            confirmDeleteApplicationButton.click();
-        }
-    }
 
 
 }
