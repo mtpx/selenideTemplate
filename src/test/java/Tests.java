@@ -39,7 +39,7 @@ public class Tests {
 
 
         log.info("1. Przejscie na strone logowania");
-        open("https://programs.nawa.gov.pl/login");
+        open("https://onet.pl/");
         //getWebDriver().manage().window().maximize();
 
         new HomePage().search("Tarnobrzeg");
