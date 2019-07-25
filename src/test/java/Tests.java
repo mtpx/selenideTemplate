@@ -39,7 +39,7 @@ public class Tests {
 
 
         log.info("1. Przejscie na strone logowania");
-        open(Constants.testurl);
+        open("https://nawa-uat.opi.org.pl/evaluation/login");
         //getWebDriver().manage().window().maximize();
 
         new HomePage().search("Tarnobrzeg");
